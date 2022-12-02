@@ -51,7 +51,7 @@ func CreateOpenGraphImage(pageTitle string) error {
 
 func titleText(dc *gg.Context, pageTitle string) (error, bool) {
 	if pageTitle == "" {
-		pageTitle = "Hamza U.f. Ghani"
+		pageTitle = "Hamza U. F. Ghani"
 	}
 
 	title := pageTitle
