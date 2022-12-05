@@ -17,8 +17,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '1.19.3' # The Go version to download (if necessary) and use.
-      - working-directory: ./functions
-      - run: GOOS=linux GOARCH=amd64 go build -o main main.go
+      - run: GOOS=linux GOARCH=amd64 go build -o main ./functions/main.go
       - name: installing infrastructure dependencies
         working-directory: ./infra
         run: npm i
