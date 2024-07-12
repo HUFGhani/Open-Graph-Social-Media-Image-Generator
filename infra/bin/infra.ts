@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
-import { OpenGraphInfraStack } from '../lib/open-graph-infra-stack';
+import * as cdk from 'aws-cdk-lib'
+import 'source-map-support/register'
+import { OpenGraphInfraStack } from '../lib/open-graph-infra-stack'
 
-const app = new cdk.App();
-new OpenGraphInfraStack(app, 'open_graph_social_media_image ', {
+const app = new cdk.App()
+new OpenGraphInfraStack(app, 'OpenGraphInfraStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -15,7 +15,10 @@ new OpenGraphInfraStack(app, 'open_graph_social_media_image ', {
 
   /* Uncomment the next line if you know exactly what Account and Region you
    * want to deploy the stack to. */
-  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.AWS_DEFAULT_REGION },
+  env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.AWS_DEFAULT_REGION,
+  },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
-});
+})

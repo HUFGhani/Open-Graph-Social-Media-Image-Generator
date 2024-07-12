@@ -5,15 +5,15 @@ go 1.19
 require (
 	github.com/aws/aws-lambda-go v1.34.1
 	github.com/aws/aws-sdk-go v1.44.138
+	github.com/awslabs/aws-lambda-go-api-proxy v0.13.3
+	github.com/disintegration/imaging v1.6.2
 	github.com/fogleman/gg v1.3.0
+	github.com/gofiber/fiber/v2 v2.39.0
 	github.com/pkg/errors v0.9.1
 )
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
-	github.com/awslabs/aws-lambda-go-api-proxy v0.13.3 // indirect
-	github.com/disintegration/imaging v1.6.2 // indirect
-	github.com/gofiber/fiber/v2 v2.39.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/klauspost/compress v1.15.12 // indirect
