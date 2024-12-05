@@ -1,12 +1,13 @@
 package awsS3
 
 import (
+	"log"
+	"os"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
-	"log"
-	"os"
 )
 
 func S3downloadAssets() {
@@ -16,7 +17,8 @@ func S3downloadAssets() {
 	files := []string{"background.jpeg", "DrSugiyama-Regular.ttf", "OpenSans-Bold.ttf"}
 
 	sess, err := session.NewSession(&aws.Config{
-		Region: aws.String("eu-west-2")},
+		Region: aws.String("us-east-1"),
+	},
 	)
 
 	if err != nil {

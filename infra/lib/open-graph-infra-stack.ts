@@ -31,7 +31,7 @@ export class OpenGraphInfraStack extends cdk.Stack {
     const lambdaFN = new lambda.Function(this, 'HelloGoServerLambdaFn', {
       code: lambda.Code.fromBucket(lambdaAsset.bucket, lambdaAsset.s3ObjectKey),
       // timeout: Duration.seconds(300),
-      runtime: lambda.Runtime.GO_1_X,
+      runtime: lambda.Runtime.PROVIDED_AL2023,
       handler: 'main',
       memorySize: 521,
       environment: {
@@ -70,7 +70,7 @@ export class OpenGraphInfraStack extends cdk.Stack {
             ssm.StringParameter.fromStringParameterName(
               this,
               'certificateSSM',
-              '/hufghani.dev/Certificate',
+              '/og.hufghani.dev/Certificate',
             ).stringValue,
           ),
         },

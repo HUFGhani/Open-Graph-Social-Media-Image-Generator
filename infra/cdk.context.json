@@ -2,5 +2,9 @@
   "hosted-zone:account=078423179649:domainName=hufghani.dev:region=eu-west-2": {
     "Id": "/hostedzone/Z0610752433YULEDCF6G",
     "Name": "hufghani.dev."
+  },
+  "hosted-zone:account=078423179649:domainName=hufghani.dev:region=us-east-1": {
+    "Id": "/hostedzone/Z0610752433YULEDCF6G",
+    "Name": "hufghani.dev."
   }
 }
