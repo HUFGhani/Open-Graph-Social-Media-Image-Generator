@@ -17,3 +17,4 @@ jobs:
           go-version: '1.21' 
       - name: build & deploying opengraph
         run: npx cdk deploy --require-approval never
+        working-directory: infra
