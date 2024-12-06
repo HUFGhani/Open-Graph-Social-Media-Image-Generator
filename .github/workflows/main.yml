@@ -16,5 +16,8 @@ jobs:
         with:
           go-version: '1.21' 
       - name: build & deploying opengraph
+        env:
+          CDK_DEFAULT_ACCOUNT: $({secrets.CDK_DEFAULT_ACCOUNT})
+          AWS_DEFAULT_REGION: $({env.AWS_DEFAULT_REGION})
         run: npm ci && npx cdk deploy --require-approval never
         working-directory: infra
