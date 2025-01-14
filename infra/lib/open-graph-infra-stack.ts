@@ -15,23 +15,14 @@ import { Construct } from 'constructs'
 import * as path from 'path'
 
 import { CloudFrontToApiGateway } from '@aws-solutions-constructs/aws-cloudfront-apigateway'
-import { execSync } from 'child_process'
 
 export class OpenGraphInfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
 
-    try{
-      const buildFunction = execSync('cd ../functions && go mod download && GOOS=linux GOARCH=amd64 go build -tags lambda.norpc -o bootstrap main.go && zip myFunction.zip bootstrap',{
-        stdio:'inherit'
-      })
-    }catch (error){
-        console.error(`Error executing Bash command:`, error)
-      }
-    
-
     const lambdaAsset = new asserts.Asset(this, 'HelloGoServerLambdaFnZip', {
-      path: path.join(__dirname, '../../functions'),
+      path: path.join(__dirname, '../../lambda.zip'),
+
     })
 
     const opengraphAsset = new s3.Bucket(this, 'OpenGraphAsset', {

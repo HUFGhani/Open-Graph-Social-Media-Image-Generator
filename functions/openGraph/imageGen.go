@@ -1,11 +1,13 @@
 package openGraph
 
 import (
+	"fmt"
+	"image/color"
+	"path/filepath"
+
 	"github.com/disintegration/imaging"
 	"github.com/fogleman/gg"
 	"github.com/pkg/errors"
-	"image/color"
-	"path/filepath"
 )
 
 const (
@@ -14,7 +16,7 @@ const (
 	margin = 20.0
 )
 
-func CreateOpenGraphImage(pageTitle string) error {
+func CreateOpenGraphImage(pageTitle string, pageDescription string) error {
 
 	dc := gg.NewContext(width, height)
 	err, done := loadBackgroundImage(dc)
@@ -35,7 +37,7 @@ func CreateOpenGraphImage(pageTitle string) error {
 		return err
 	}
 
-	err, done = titleText(dc, pageTitle)
+	err, done = titleText(dc, pageTitle, pageDescription)
 	if !done {
 		return err
 	}
@@ -49,12 +51,16 @@ func CreateOpenGraphImage(pageTitle string) error {
 
 }
 
-func titleText(dc *gg.Context, pageTitle string) (error, bool) {
-	if pageTitle == "" {
+func titleText(dc *gg.Context, pageTitle string, pageDescription string) (error, bool) {
+	if pageTitle == ""  {
 		pageTitle = "Hamza U. F. Ghani"
 	}
+	
+	if pageDescription == "" {
+		pageDescription = "My own little space on the internet, where I write about what I've learned from my day job."
+	}
 
-	title := pageTitle
+	title := fmt.Sprintf("%s - %s", pageTitle, pageDescription)
 	textShadowColor := color.Black
 	textColor := color.White
 	fontPath := filepath.Join("/tmp", "OpenSans-Bold.ttf")

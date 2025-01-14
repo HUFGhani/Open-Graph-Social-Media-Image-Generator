@@ -180,5 +180,5 @@ Temporary Items
 **/node_modules
 **/cdk.out
 
-*/*.zip
+**/*.zip
 bootstrap

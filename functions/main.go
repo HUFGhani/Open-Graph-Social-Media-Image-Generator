@@ -29,9 +29,9 @@ func init() {
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		pagetitle := c.Query("title")
-		openGraph.CreateOpenGraphImage(pagetitle)
+		pageDescription := c.Query("description")
+		openGraph.CreateOpenGraphImage(pagetitle, pageDescription)
 		return c.SendFile("/tmp/outputFilename.png")
-		// return c.SendString(pagetitle)
 	})
 	fiberLambda = fiberadapter.New(app)
 }

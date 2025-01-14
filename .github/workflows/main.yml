@@ -19,5 +19,5 @@ jobs:
         env:
           CDK_DEFAULT_ACCOUNT: ${{env.CDK_DEFAULT_ACCOUNT}}
           AWS_DEFAULT_REGION: ${{env.AWS_DEFAULT_REGION}}
-        run: npm ci && npx cdk deploy --require-approval never
-        working-directory: infra
+        run: make deploy
+        
