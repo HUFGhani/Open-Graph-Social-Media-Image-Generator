@@ -17,7 +17,7 @@ jobs:
           go-version: '1.21' 
       - name: build & deploying opengraph
         env:
-          CDK_DEFAULT_ACCOUNT: $CDK_DEFAULT_ACCOUNT
-          AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+          CDK_DEFAULT_ACCOUNT: ${{vars.CDK_DEFAULT_ACCOUNT}}
+          AWS_DEFAULT_REGION: ${{vars.AWS_DEFAULT_REGION}}
         run: make deploy
         
