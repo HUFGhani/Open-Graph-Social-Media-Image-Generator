@@ -4,4 +4,5 @@ build:
 deploy:
 		make build
 		cd ./infra && \
+		npm i && \
 		npx cdk deploy
